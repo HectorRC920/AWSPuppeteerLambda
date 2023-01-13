@@ -1,0 +1,17 @@
+{
+  "name": "testawschrome",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "zip": "7z a -r function.zip ./index.js  node_modules/",
+    "sendToLambda": "aws s3 cp function.zip s3://promessa-dev && aws lambda update-function-code --function-name puppeteer --s3-bucket promessa-dev --s3-key function.zip && rm function.zip"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chrome-aws-lambda": "~10.1.0",
+    "puppeteer-core": "^10.0.0"
+  }
+}
